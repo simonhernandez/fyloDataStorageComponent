@@ -22,9 +22,11 @@
     <div class="data-storage">
       <div class="actions-container">
         <div class="logo-container"><img src="./images/logo.svg" alt="logo" class="logo"></div>
-        <div class="icon-container"><button><img src="./images/icon-document.svg" alt="" class="icon"></button></div>
-        <div class="icon-container"><button><img src="./images/icon-folder.svg" alt="" class="icon"></button></div>
-        <div class="icon-container"><button><img src="./images/icon-upload.svg" alt="" class="icon"></button></div>
+        <div class="icons">
+          <div class="icon-container"><button><img src="./images/icon-document.svg" alt="" class="icon"></button></div>
+          <div class="icon-container"><button><img src="./images/icon-folder.svg" alt="" class="icon"></button></div>
+          <div class="icon-container"><button><img src="./images/icon-upload.svg" alt="" class="icon"></button></div>
+        </div>
       </div>
   
       <div class="storage-container">
@@ -33,13 +35,19 @@
         </p>
   
         <div class="storage__usage">
-          <div class="storage__usagebar"></div>
-          <span class="storage__quantity storage__quantity--left">0 GB</span>
-          <span class="storage__quantity storage__quantity--right">1000 GB</span>
+          <div class="storage__usagebar">
+            <div class="storage__usageprogress">
+              <div class="white-ball"></div>
+            </div>
+          </div>
+          <div class="storage__indicators">
+            <span>0 GB</span>
+            <span>1000 GB</span>
+          </div>
         </div>
   
         <div class="storage__leftspace">
-          <p><span>185 GB</span> Left</p>
+          <p><span>185</span> GB Left</p>
         </div>
       </div>
     </div>

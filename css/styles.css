@@ -1,0 +1,75 @@
+/* ---- Google Fonts ---- */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+/* ---- Custom Properties ---- */
+:root{
+    /* Colors */
+    --clr-white: #fff;
+    --clr-paleblue: hsl(243, 100%, 93%);
+    --clr-grayblue: hsl(229, 7%, 55%);
+    --clr-darkblue: hsl(228, 56%, 26%);
+    --clr-verydarkblue: hsl(229, 57%, 11%);
+    --clr-gradient: linear-gradient(hsl(6, 100%, 80%) to hsl(335, 100%, 65%));
+    /* Fonts and typography */
+    --ff-primary: 'Raleway', sans-serif;
+
+    --fs-big: 2.5rem;
+    --fs-normal: 1.2rem;
+    --fs-small: .813rem;
+
+    --fw-reg: 400;
+    --fw-bold: 700;
+    /* Z Index */
+    --z-back: -10;
+    --z-normal: 1;
+    --z-tooltip: 10;
+    --z-fixed: 100;
+    /* Box Shadow */
+    /* Others */
+}
+@media screen and (min-width: 768px){
+    :root{
+        --fs-big: 2.5rem;
+        --fs-normal: 1.2rem;
+        --fs-small: .813rem;
+    }
+}
+/* ---- General Styles ---- */
+/* Base */
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    color: var(--clr-white);
+
+    font-family: var(--ff-primary);
+    font-size: var(--fs-normal);
+    font-weight: var(--fw-reg);
+}
+img{
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+button{
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+/* Layout */
+.container{
+    background-image: url(/images/bg-mobile.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* ---- Component Styles ---- */
+
+/* ---- Media Queries ---- */

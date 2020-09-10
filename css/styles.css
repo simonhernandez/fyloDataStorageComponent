@@ -14,7 +14,7 @@
     --ff-primary: 'Raleway', sans-serif;
 
     --fs-big: 2.5rem;
-    --fs-normal: 1rem;
+    --fs-normal: .968rem;
     --fs-small: .813rem;
 
     --fw-reg: 400;
@@ -25,6 +25,7 @@
     --z-tooltip: 10;
     --z-fixed: 100;
     /* Box Shadow */
+    --bxs-box: 12px 10px 30px -11px rgba(0,0,0,0.75);
     /* Others */
 }
 @media screen and (min-width: 768px){
@@ -68,17 +69,21 @@ button{
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 100vh;
-    padding: 1.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 /* ---- Component Styles ---- */
+.data-storage{
+    max-width: 320px;
+    width: 100%;
+}
 .data-storage > *:not(:last-child){
     margin-bottom: 1rem;
 }
 .actions-container,
 .storage-container{
+    box-shadow: var(--bxs-box);
     background-color: var(--clr-darkblue);
     padding: 2.5rem;
     border-radius: .5rem;
@@ -109,6 +114,10 @@ button{
 .storage-container > *:not(:last-child){
     margin-bottom: 1rem;
 }
+.storage__description{
+    opacity: .75;
+    text-align: center;
+}
 .storage__description span{
     font-weight: var(--fw-bold);
 }
@@ -121,23 +130,23 @@ button{
     overflow: hidden;
     display: flex;
     align-items: center;
-    margin-bottom: 1rem;
+    margin-bottom: .5rem;
 }
 .storage__usageprogress{
     background-image: var(--clr-gradient);
     height: 100%;
-    width: 80%;
+    width: 75%;
     border-radius: 10px;
-    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 2.5px;
 }
 .white-ball{
     background-color: var(--clr-white);
-    height: 10px;
-    width: 10px;
+    height: 9px;
+    width: 9px;
     border-radius: 50%;
-    position: absolute;
-    right: 2px;
-    top: 2.5px;
 }
 .storage__indicators{
     display: flex;
@@ -156,10 +165,67 @@ button{
     font-weight: var(--fw-bold);
     text-transform: uppercase;
 }
-.storage__leftspace span{
+.storage__leftspace p{
+    vertical-align: middle;
     font-size: var(--fs-big);
     color: var(--clr-black);
+}
+.storage__leftspace span{
+    color: var(--clr-grayblue);
+    font-size: var(--fs-normal);
+    vertical-align: middle;
     display: inline-block;
-    margin-right: .5rem;
+    margin-left: .25rem;
+}
+footer{
+    color: var(--clr-black);
 }
 /* ---- Media Queries ---- */
+@media screen and (min-width: 900px){
+    .container{
+        background-image: url(/images/bg-desktop.png);
+        background-size: contain;
+        background-position: center 125%;
+        background-color: var(--clr-verydarkblue);
+    }
+    .data-storage{
+        max-width: 1200px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+    }
+    .data-storage > *:not(:last-child){
+        margin-bottom: initial;
+    }
+    .actions-container,
+    .storage-container{
+        width: 100%;
+    }
+    .actions-container{
+        margin-right: 2rem;
+        max-width: 350px;
+        width: 100%;
+    }
+    .storage-container{
+        max-width: 550px;
+    }
+    .storage__description{
+        text-align: left;
+    }
+    .storage__leftspace{
+        top: -25%;
+        left: initial;
+        right: 5%;
+        border-bottom-right-radius: 0;
+    }
+    .storage__leftspace::after{
+        content: '';
+        width: 20px;
+        height: 20px;
+        background-color: var(--clr-black);
+        background-image: linear-gradient(45deg, var(--clr-darkblue) 50%, white 50%);
+        position: absolute;
+        bottom: -20px;
+        right: 0;
+    }
+}
